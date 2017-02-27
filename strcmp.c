@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	 * or 1 (prog name) + 3 (num of args) = 4
 	 */
 	if ((!ignore_spaces && 3 != argc) || (ignore_spaces && 4 != argc)) {
-		fputs("ERROR: wrong usage", stderr);
+		fputs("ERROR: wrong usage\n", stderr);
 		print_usage(stderr, argv[0]);
 		return EXIT_FAILURE;
 	}
