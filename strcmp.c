@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
 	}
 
 	/* Either 1 (prog name) + 2 (num of args) = 3,
-	 * or 1 (prog name) + 3 (num of args) = 4 */
+	 * or 1 (prog name) + 3 (num of args) = 4
+	 */
 	if ((!ignore_spaces && 3 != argc) || (ignore_spaces && 4 != argc)) {
 		fputs("ERROR: wrong usage", stderr);
 		print_usage(stderr, argv[0]);
@@ -42,7 +43,8 @@ int main(int argc, char *argv[])
 
 	if ((!ignore_spaces && !strcmp(argv[optind], argv[optind + 1]))
 	    || (ignore_spaces 
-		    && !strcmp_ignore_spaces((const unsigned char *restrict) argv[optind],
+		    && !strcmp_ignore_spaces(
+			    (const unsigned char *restrict) argv[optind],
 			    (const unsigned char *restrict) argv[optind + 1]))) {
 		puts("true");
 	} else {
@@ -59,8 +61,8 @@ static void print_usage(FILE *stream,char *prog_name)
 "Compare between two strings. Prints 'true' if they are the same, otherwise prints 'false'.\n"
 "\n"
 "OPTIONS:\n"
-"  -w                         Ignore whitespaces when comparing the string\n"
-"  -h                         Print this help message and exit\n",
+"  -h                         Print this help message and exit\n"
+"  -w                         Ignore whitespaces when comparing the string\n",
 	prog_name);
 }
 
